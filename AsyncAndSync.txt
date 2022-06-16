@@ -1,0 +1,2 @@
+Synchronous function in fs module it wait untill the task is not completed then it move to another task.
+Asynchronous function in fs module does not wait if currnet task will take time it immediately move to next task.
