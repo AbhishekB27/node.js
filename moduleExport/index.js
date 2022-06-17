@@ -1,0 +1,5 @@
+const { add,sub,mul,name,lastName } = require('./operator')
+console.log(add(45,44))
+console.log(sub(125,45))
+console.log(mul(9,9))
+console.log(name + " " +lastName)
