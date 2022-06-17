@@ -15,7 +15,7 @@ fs.readFile('AsyncAndSync.txt','utf-8',(err,data)=>{
         end = new Date();
     }
     console.log(start + ":" +end);
-    console.log(Math.ceil((end.getTime() - start.getTime())/1000))
+    console.log("It takes " + Math.ceil((end.getTime() - start.getTime())/1000) + "sec")
 });
 
 console.log("I'm Async.")
