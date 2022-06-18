@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "practice makes man perfect",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Abhishek Bahuguna",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^5.0.1"
+    "nodemon": "^2.0.16"
   }
 }
