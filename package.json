@@ -1,0 +1,15 @@
+{
+  "name": "npmmod",
+  "version": "1.0.0",
+  "description": "practice makes man perfect",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Abhishek Bahuguna",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
