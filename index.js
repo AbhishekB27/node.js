@@ -1,17 +1,27 @@
-const fs = require('fs')
-let data = {
-    id:"001",
-    name:"Abhishek Bahuguna",
-    age:"21",
-    address:"Dehradun,Uttarakhand",
-    hobbie:"Swimming"
-}
-const jsonData = JSON.stringify(data)
-fs.writeFile('dummy/details.json',jsonData,(err)=>{
-    console.log('file create successfully.')
-})
-fs.readFile('dummy/details.json','utf-8',(err,data)=>{
-    let jsObject = JSON.parse(data); //convert the json data int js object
-    console.log("file fetched")
-    console.log(jsObject)
-})
+const http = require('http');
+const fs = require('fs');
+var counter = 0;
+
+const server = http.createServer((req,res)=>{
+    if(req.url == '/Home'){
+        res.end("I m Home Page")
+    }
+    else if(req.url == '/products'){
+        fs.readFile(`${__dirname}/product/product.json`,'utf-8',(err,data)=>{
+            const objData = JSON.parse(data);
+            objData.products.filter((data)=> data.category =='home-decoration').forEach(element => {
+                counter++
+                console.log(`${counter}: ${element.title}, price: ${element.price}`)
+            });
+            // objData.products.forEach(element => {
+            //     counter++
+            //   console.log(counter + ": " + element.title)  
+            // })
+            res.end(data)
+        })
+    }
+    else{
+        res.writeHead(404,{"content-type":"text/html"})
+        res.end("<h1>404 Error</h1> <h2>Page Does'nt Exist.</h2>")
+    }
+}).listen(8080);
