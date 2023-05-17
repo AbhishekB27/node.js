@@ -3,10 +3,11 @@ const fs = require('fs');
 var counter = 0;
 
 const server = http.createServer((req,res)=>{
-    if(req.url == '/Home'){
+    if(req.url == '/home'){
         res.end("I m Home Page")
     }
     else if(req.url == '/products'){
+        console.log(__dirname)
         fs.readFile(`${__dirname}/product/product.json`,'utf-8',(err,data)=>{
             const objData = JSON.parse(data);
             objData.products.filter((data)=> data.category =='home-decoration').forEach(element => {
