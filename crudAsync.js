@@ -19,16 +19,16 @@ const fs = require('fs');
 //     console.log('New data are appended in bio.txt inside the abhi.')
 // })
 //i prindted the data of bio.txt on console.
-fs.readFile('./abhi/bio.txt','utf-8',(err,data)=>{
+fs.readFile('./abhi/myIntro.txt','utf-8',(err,data)=>{
     if(err != null){
         console.log(err)
     }
     console.log(data);
 });
 // i renamed bio.txt to myIntro.txt
-// fs.rename('./abhi/bio.txt','./abhi/myIntro.txt',(err)=>{
-//     console.log('File renamed successfully.')
-// })
+fs.rename('./introduction.txt','./myBio.txt',(err)=>{
+    console.log('File renamed successfully.')
+})
 // fs.unlink('./abhi/myIntro.txt',(err)=>{
 //     console.log('File deleted successfully.');
 // });
